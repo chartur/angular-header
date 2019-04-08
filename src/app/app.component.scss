@@ -1,0 +1,103 @@
+*{
+  font-family: 'Lato', sans-serif;
+}
+
+.header-menu{
+  z-index: 1000;
+  position:fixed;
+  top: 0;
+
+  & .f{
+    display: none;
+  }
+
+  width: 100%;
+  background: #fff;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px;
+
+  & .icon:not(.f){
+    position: relative;
+
+    & img{
+      position: absolute;
+      transition: all .2s ease;
+      top: 35px;
+      right: 30px;
+      width: 150px;
+    }
+  }
+  ul{
+    font-size: 100%;
+    padding-left: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    & li{
+      padding: 10px 15px;
+
+      & a{
+        color: #000;
+        text-decoration: none;
+      }
+
+      &.active a{
+        color: #B7B7B7;
+      }
+    }
+
+  }
+
+  &.sml{
+    border-bottom: 1px solid #DADADA;
+    & .icon:not(.f) img{
+      transition: all .2s ease;
+      width: 100px;
+      top:-10px;
+    }
+  }
+}
+
+.content-container{
+  margin-top: 60px;
+
+  &.none-scroll{
+    margin-top: 160px;
+  }
+}
+.header-button-parent{
+  height: 50px;
+  position: relative;
+
+  &:not(.f){
+    width: 200px;
+  }
+
+  &.f button{
+    right: 100%;
+  }
+
+  & .header-button{
+    transition: all .3s cubic-bezier(0.74, 1.29, 0, 1.38);
+    bottom: 100px;
+    left: 0;
+    position: absolute;
+
+    &.show-button{
+      transition: all .3s cubic-bezier(0.74, 1.29, 0, 1.38);
+      bottom: 5px;
+    }
+  }
+}
+
+@media (max-width: 767px){
+    h1{
+      margin-top: 0px;
+      font-size: 28px;
+    }
+}
